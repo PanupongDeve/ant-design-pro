@@ -21,7 +21,7 @@ steps:
 - script: 'yarn install'
   displayName: 'Run yarn install'
 
-- script: 'npm yarn build'
+- script: 'yarn build'
   displayName: 'Run yarn build'
 
 - script: 'npm run netlify-deploy'
