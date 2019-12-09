@@ -2,6 +2,11 @@ English | [简体中文](./README.zh-CN.md) | [Русский](./README.ru-RU.md
 
 <h1 align="center">Ant Design Pro</h1>
 
+[![Build Status](https://dev.azure.com/5635512110/ant-backoffice/_apis/build/status/PanupongDeve.ant-design-pro?branchName=master)](https://dev.azure.com/5635512110/ant-backoffice/_build/latest?definitionId=7&branchName=master)
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d97b60c5-c7c1-4658-8cc2-7666f566078a/deploy-status)](https://app.netlify.com/sites/ant-backoffice/deploys)
+
+
 <div align="center">
 
 An out-of-box UI solution for enterprise applications as a React boilerplate.
