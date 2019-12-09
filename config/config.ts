@@ -1,15 +1,16 @@
 import { IConfig, IPlugin } from 'umi-types';
 import defaultSettings from './defaultSettings'; // https://umijs.org/config/
+
 import slash from 'slash2';
 import themePluginConfig from './themePluginConfig';
 
-const { pwa } = defaultSettings;
+import { BackOffice } from './Router';
 
-// preview.pro.ant.design only do not use in your production ;
+const { pwa } = defaultSettings; // preview.pro.ant.design only do not use in your production ;
 // preview.pro.ant.design 专用环境变量，请不要在你的项目中使用它。
+
 const { ANT_DESIGN_PRO_ONLY_DO_NOT_USE_IN_YOUR_PRODUCTION } = process.env;
 const isAntDesignProPreview = ANT_DESIGN_PRO_ONLY_DO_NOT_USE_IN_YOUR_PRODUCTION === 'site';
-
 const plugins: IPlugin[] = [
   [
     'umi-plugin-react',
@@ -77,55 +78,42 @@ export default {
   // umi routes: https://umijs.org/zh/guide/router.html
   routes: [
     {
-      path: '/user',
-      component: '../layouts/UserLayout',
-      routes: [
-        {
-          name: 'login',
-          path: '/user/login',
-          component: './user/login',
-        },
-      ],
-    },
-    {
       path: '/',
-      component: '../layouts/SecurityLayout',
+      component: '../layouts/BlankLayout',
       routes: [
         {
-          path: '/',
-          component: '../layouts/BasicLayout',
-          authority: ['admin', 'user'],
+          path: '/user',
+          component: '../layouts/UserLayout',
           routes: [
             {
-              path: '/',
-              redirect: '/welcome',
+              path: '/user',
+              redirect: '/user/login',
             },
             {
-              path: '/welcome',
-              name: 'welcome',
+              name: 'login',
               icon: 'smile',
-              component: './Welcome',
+              path: '/user/login',
+              component: './user/login',
             },
             {
-              path: '/admin',
-              name: 'admin',
-              icon: 'crown',
-              component: './Admin',
-              authority: ['admin'],
+              name: 'register-result',
+              icon: 'smile',
+              path: '/user/register-result',
+              component: './user/register-result',
             },
             {
-              component: './404',
+              name: 'register',
+              icon: 'smile',
+              path: '/user/register',
+              component: './user/register',
+            },
+            {
+              component: '404',
             },
           ],
         },
-        {
-          component: './404',
-        },
+        BackOffice,
       ],
-    },
-
-    {
-      component: './404',
     },
   ],
   // Theme for antd: https://ant.design/docs/react/customize-theme-cn
@@ -174,8 +162,7 @@ export default {
   },
   manifest: {
     basePath: '/',
-  },
-  // chainWebpack: webpackPlugin,
+  }, // chainWebpack: webpackPlugin,
   // proxy: {
   //   '/server/api/': {
   //     target: 'https://preview.pro.ant.design/',
