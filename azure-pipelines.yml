@@ -21,5 +21,8 @@ steps:
 - script: 'npm install -g'
   displayName: 'Run npm install -g netlify-cli'
 
+- script: 'npm run build'
+  displayName: 'Run npm run build'
+
 - script: 'npm run netlify-deploy'
   displayName: 'Run npm run netlify-deploy'
