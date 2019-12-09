@@ -10,7 +10,7 @@ export default {
   'userandlogin.login.forgot-password': 'Forgot your password?',
   'userandlogin.login.sign-in-with': 'Sign in with',
   'userandlogin.login.signup': 'Sign up',
-  'userandlogin.login.login': 'Login',
+  'userandlogin.login.login': 'Sign in',
   'userandlogin.register.register': 'Register',
   'userandlogin.register.get-verification-code': 'Get code',
   'userandlogin.register.sign-in': 'Already have an account?',
