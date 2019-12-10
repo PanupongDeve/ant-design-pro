@@ -14,7 +14,8 @@ const SelectLang: React.FC<SelectLangProps> = props => {
   const { className } = props;
   const selectedLang = getLocale();
   const changeLang = ({ key }: ClickParam): void => setLocale(key);
-  const locales = ['zh-CN', 'zh-TW', 'en-US', 'pt-BR'];
+  // const locales = ['zh-CN', 'zh-TW', 'en-US', 'pt-BR'];
+  const locales = ['en-US'];
   const languageLabels = {
     'zh-CN': '简体中文',
     'zh-TW': '繁体中文',
@@ -39,13 +40,15 @@ const SelectLang: React.FC<SelectLangProps> = props => {
       ))}
     </Menu>
   );
-  return (
-    <HeaderDropdown overlay={langMenu} placement="bottomRight">
-      <span className={classNames(styles.dropDown, className)}>
-        <Icon type="global" title={formatMessage({ id: 'navBar.lang' })} />
-      </span>
-    </HeaderDropdown>
-  );
+  // return (
+  //   <HeaderDropdown overlay={langMenu} placement="bottomRight">
+  //     <span className={classNames(styles.dropDown, className)}>
+  //       <Icon type="global" title={formatMessage({ id: 'navBar.lang' })} />
+  //     </span>
+  //   </HeaderDropdown>
+  // );
+
+  return <div />
 };
 
 export default SelectLang;
