@@ -14,14 +14,14 @@ const BackOffice = {
   path: '/',
   component: '../layouts/BasicLayout',
   Routes: ['src/pages/Authorized'],
-  authority: ['admin', 'user'],
+  // authority: ['admin', 'user'],
   routes: [],
 };
 
 const REDIRECT_ROUTES: any = {
   path: '/',
   redirect: '/dashboard/home',
-  authority: ['admin', 'user'],
+  // authority: ['admin', 'user'],
 };
 
 const PAGE_404 = {
