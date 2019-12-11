@@ -139,7 +139,7 @@ class Analysis extends Component<AnalysisProps, AnalysisState> {
     if (salesType === 'all') {
       salesPieData = salesTypeData;
     } else {
-      salesPieData = salesType === 'online' ? salesTypeDataOnline : salesTypeDataOffline;
+      salesPieData = salesType === 'stores' ? salesTypeDataOnline : salesTypeDataOffline;
     }
     const menu = (
       <Menu>

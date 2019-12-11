@@ -86,7 +86,7 @@ const defaultFooterDom = (
 
 const footerRender: BasicLayoutProps['footerRender'] = () => {
   if (!isAntDesignPro()) {
-    return defaultFooterDom;
+    return '';
   }
 
   return (
