@@ -3,6 +3,9 @@ import { Button, message, notification } from 'antd';
 import React from 'react';
 import { formatMessage } from 'umi-plugin-react/locale';
 import defaultSettings from '../config/defaultSettings';
+import firebaseService from './services/firebaseService';
+
+firebaseService.initializeApp();
 
 const { pwa } = defaultSettings;
 // if pwa is true
