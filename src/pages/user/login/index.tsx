@@ -8,6 +8,10 @@ import Link from 'umi/link';
 import { StateType } from './model';
 import LoginComponents from './components/Login';
 import styles from './style.less';
+import FirebaseService from '@/services/firebaseService';
+import authRepository from '@/repository/authRepository';
+
+
 
 const { UserName, Password, Submit } = LoginComponents;
 
@@ -38,7 +42,7 @@ class Login extends Component<LoginProps, LoginState> {
     });
   };
 
-  handleSubmit = (error: any, values: any) => {
+  handleSubmit = async (error: any, values: any) => {
     if (!error) {
       const { username, password } = values;
       this.setState({
@@ -46,7 +50,12 @@ class Login extends Component<LoginProps, LoginState> {
         password
       })
 
-      this.props.history.push('/dashboard/home');
+      const response = await authRepository.register(username, password);
+
+      console.log('response', response);
+
+
+      // this.props.history.push('/dashboard/home');
     }
     
   };
